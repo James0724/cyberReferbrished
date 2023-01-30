@@ -1,0 +1,53 @@
+.innerbox {
+  padding: 50px 0px 80px;
+}
+.illustration {
+  position: relative;
+  width: 100%;
+  bottom: 20px;
+}
+.box1 {
+  .regularfont {
+    line-height: 50px;
+    padding-right: 20px;
+  }
+}
+@include desktopX {
+  .box1 {
+    .regularfont {
+      line-height: 45px;
+      padding-right: 40px;
+      font-size: 20px;
+    }
+  }
+}
+@include desktop {
+  .box1 .regularfont {
+    line-height: 35px;
+    font-size: 18px;
+  }
+}
+@include mini-desktopxd {
+  .box1 .regularfont {
+    padding: 0px;
+    line-height: 30px;
+  }
+}
+@include tab {
+  .box1 {
+    .regularfont {
+      line-height: 26px;
+      padding-right: 0px;
+      font-size: 16px;
+    }
+  }
+}
+@include phone {
+  .box1 {
+    .regularfont {
+      line-height: 22px;
+      padding-right: 0px;
+      font-size: 14px;
+    }
+  }
+}

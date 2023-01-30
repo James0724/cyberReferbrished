@@ -1,0 +1,65 @@
+.category {
+  padding: 200px 0px 20px;
+  .servicearea {
+    padding: 0;
+    .servicebox {
+      cursor: default;
+      .servicecnt-box {
+        background: #3137d2;
+        position: relative;
+        width: 100%;
+        padding-bottom: 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          height: 4px;
+          width: 100%;
+          background: $yellow;
+          transition: 0.4s ease-in-out;
+          z-index: 1;
+        }
+        .category-svg {
+          padding: 50px 0px;
+          img {
+            height: 130px;
+            object-fit: contain;
+          }
+        }
+        .category-text {
+          padding: 0;
+          h4 {
+            @include fontSize(25px);
+            margin-bottom: 20px;
+            color: $whiteColor;
+            font-family: $regularfont;
+            text-align: center;
+          }
+          ul {
+            padding: 0;
+            li {
+              @include fontSize(20px);
+              color: rgba($whiteColor, 0.4);
+              font-weight: 300;
+              transition: 0.3s ease-in-out;
+              z-index: 1;
+              min-height: 50px;
+              padding: 0px 30px;
+              &:hover {
+                color: rgba($whiteColor, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include phone-x {
+  .timelinebox {
+    padding: 30px 0;
+  }
+}

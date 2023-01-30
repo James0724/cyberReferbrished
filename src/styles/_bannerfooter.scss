@@ -1,0 +1,262 @@
+//Introduction Area
+.banneareafooter {
+  padding: 60px 0px 120px;
+}
+.banneareafooter_col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .banneareafooter_icon {
+    position: absolute;
+    left: -60px;
+    margin: auto;
+    img {
+      height: 60px;
+    }
+  }
+  h3 {
+    margin-bottom: 0px;
+    font-family: $regularfont;
+    color: #ebecfa;
+    @include fontSize(26px);
+  }
+  .service_items {
+    display: flex;
+    margin: 0;
+    .service_item {
+      cursor: default;
+      padding: 20px;
+      color: #ebecfa;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      h3 {
+        white-space: nowrap;
+        font-family: $regularfont;
+        font-weight: bold;
+        @include fontSize(22px);
+        letter-spacing: 2px;
+      }
+      background: $blue;
+    }
+  }
+}
+
+// @include desktopX {
+//   .banneareafooter {
+//     padding: 60px 0px 230px;
+//   }
+
+//   .banneareafooter_col {
+//     .banneareafooter_icon {
+//       left: -50px;
+//       margin: auto;
+//       img {
+//         height: 65px;
+//       }
+//     }
+//     .service_items {
+//       .service_item {
+//         padding: 18px;
+//         h3 {
+//           @include fontSize(18px);
+//         }
+//       }
+//     }
+//   }
+// }
+// // @include desktopM {
+
+// // }
+// @include desktop {
+//   .banneareafooter {
+//     padding: 50px 0px 150px;
+//   }
+//   .banneareafooter_col {
+//     .banneareafooter_icon {
+//       left: -50px;
+//       img {
+//         height: 50px;
+//       }
+//     }
+//     .service_items {
+//       .service_item {
+//         padding: 18px;
+//         h3 {
+//           @include fontSize(16px);
+//         }
+//       }
+//     }
+//   }
+// }
+@include mini-desktop {
+  .banneareafooter_col {
+    .banneareafooter_icon {
+      left: -50px;
+      h3 {
+        @include fontSize(16px);
+      }
+      img {
+        height: 55px;
+      }
+    }
+
+    .service_items {
+      .service_item {
+        h3 {
+          @include fontSize(16px);
+        }
+      }
+    }
+  }
+}
+
+@include tab {
+  .banneareafooter {
+    padding: 50px 0px 80px;
+  }
+  .banneareafooter_col {
+    h3 {
+      @include fontSize(15px);
+    }
+    .banneareafooter_icon {
+      left: -40px;
+      img {
+        height: 50px;
+      }
+    }
+    .service_items {
+      .service_item {
+        padding: 15px;
+        h3 {
+          @include fontSize(15px);
+        }
+      }
+    }
+  }
+}
+
+//@include tab {
+//   .banneareafooter {
+//     padding: 50px 0px 60px;
+//   }
+//   .banneareafooter_icon {
+//     margin: auto;
+//     img {
+//       height: 30px;
+//     }
+//     h3 {
+//       @include fontSize(18px);
+//     }
+//   }
+//   .service_items {
+//     .service_item {
+//       padding: 15px;
+//       h3 {
+//         @include fontSize(15px);
+//         padding-left: 40px;
+//         margin-bottom: 20px;
+//       }
+//     }
+//   }
+// }
+
+@include phone {
+  .banneareafooter {
+    padding: 120px 0px 80px;
+  }
+  .banneareafooter_col {
+    h3 {
+      @include fontSize(15px);
+    }
+    .banneareafooter_title {
+      position: relative;
+      right: -50px;
+    }
+    .banneareafooter_icon {
+      justify-content: right;
+      left: 10px;
+      img {
+        height: 40px;
+      }
+    }
+    .service_items {
+      .service_item {
+        h3 {
+          @include fontSize(12px);
+        }
+      }
+    }
+  }
+}
+@include phone-x {
+  .banneareafooter_title {
+    position: relative;
+    right: 0;
+  }
+  h3 {
+    @include fontSize(14px);
+  }
+  .banneareafooter_col {
+    margin-bottom: 50px;
+    .banneareafooter_title {
+      position: relative;
+      right: -50px;
+    }
+    .banneareafooter_icon {
+      justify-content: center;
+      left: 10px;
+      img {
+        height: 50px;
+      }
+    }
+    .service_items {
+      .service_item {
+        h3 {
+          @include fontSize(14px);
+        }
+      }
+    }
+  }
+}
+// @include phone-xs {
+//   .clientbox .clienttitle {
+//     padding-right: 60px;
+//   }
+// }
+@include phone-5s {
+  .banneareafooter {
+    padding: 160px 0px 80px;
+  }
+
+  .banneareafooter_col {
+    .banneareafooter_title {
+      position: relative;
+      right: -65px;
+    }
+    .banneareafooter_icon {
+      left: 30px;
+    }
+    .service_items {
+      padding-left: 25px;
+    }
+  }
+}
+@include phone-5 {
+  .banneareafooter {
+    padding: 120px 0px 80px;
+  }
+
+  .banneareafooter_col {
+    h3 {
+      @include fontSize(11px);
+    }
+    .service_items {
+      .service_item {
+        h3 {
+          @include fontSize(11px);
+        }
+      }
+    }
+  }
+}

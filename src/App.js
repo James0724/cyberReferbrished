@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "normalize.css";
+
+import Contact from "./components/contact";
+import FadeInWhenVisible from "./components/fadeinanim";
+import Footer from "./components/footer";
+import Introarea from "./components/introduction";
+import Navbar from "./components/navbar";
+import About from "./pages/about";
+import Homepage from "./pages/homepage";
+import Services from "./pages/services";
+import "./styles/styles.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="cyber_app">
+      <Navbar />
+      <Homepage />
+      <Introarea />
+      <div className="bg_box">
+        <div className="content container">
+          <FadeInWhenVisible>
+            <About />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <Services />
+          </FadeInWhenVisible>
+        </div>
+      </div>
+      <Contact />
+      <Footer />
     </div>
   );
 }

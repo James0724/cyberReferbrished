@@ -1,0 +1,103 @@
+@mixin dispflex($displayflex, $justifycontent, $alignitems) {
+  display: $displayflex;
+  justify-content: $justifycontent;
+  align-items: $alignitems;
+}
+@mixin navFlex($alignItems) {
+  align-items: $alignItems;
+}
+@mixin transition($time) {
+  transition: all $time ease-in-out;
+}
+@mixin big-desktop {
+  @media (min-width: 1680px) and (max-width: 2500px) {
+    @content;
+  }
+}
+@mixin desktoHD {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+@mixin desktoHDmax {
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin desktop1680_1900 {
+  @media (min-width: 1680px) and (max-width: 1900px) {
+    @content;
+  }
+}
+
+@mixin desktopX {
+  @media (max-width: 1680px) {
+    @content;
+  }
+}
+@mixin desktopM {
+  @media (max-width: 1480px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+@mixin mini-desktopxd {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin mini-desktop {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin tab_min {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+@mixin mini_tab {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin phone-xs {
+  @media (max-width: 620px) {
+    @content;
+  }
+}
+@mixin phone-x {
+  @media (max-width: 570px) {
+    @content;
+  }
+}
+@mixin phone-5s {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+@mixin phone_5 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin fontSize($fontSize) {
+  font-size: $fontSize;
+  line-height: calc(5px + #{$fontSize});
+}

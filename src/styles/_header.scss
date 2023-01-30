@@ -1,0 +1,1076 @@
+@import "globalvar.scss";
+
+$headerbg: #fff;
+
+//Header Desktop Variables
+$headerTextTransform: uppercase;
+$navlinkColor: $primarycolor;
+$navlinkPadding: 10px 12px 10px 12px;
+$navlinkFontSize: 16px;
+
+//Header Mini Desktop Variables
+$navlinkPaddingminiDesktop: 10px 12px 10px 12px;
+$navlinkFontSizeminiDesktop: 13px;
+
+//Header Burger Menu Variables
+$navlinkColorPhone: $blackColor;
+$navlinkPaddingPhone: 10px 12px 10px 12px;
+$navlinkFontSizePhone: 18px;
+
+/* ----- Active and Hover Links ----- */
+
+//Desktop
+$navactiveLinkColor: $blackColor;
+$navactiveBg: $bgnone;
+$activeBgRadius: 0;
+
+//Burger Menu
+$navactiveLinkColorPhone: $lightGray;
+$navactiveBgPhone: $bgnone;
+
+/* ----- Active and Hover Links End ----- */
+
+//Dropdown Menu Variables
+$dropDownPadding: 10px;
+$dropDownnavlinkColor: $blackColor;
+$dropDownnavlinkFontSize: 16px;
+$dropDownUlBg: $whiteColor;
+$dropDownBorder: 0;
+$dropDownBorderRadius: 0;
+
+//Burger Menu
+$dropDownUlBgPhone: $bgnone;
+$dropDownnavlinkColorPhone: $whiteColor;
+$dropDownPaddingPhone: 3px 5px;
+
+//Dropdown Menu Active Effects Variables
+$dropDownnavlinkActiveColor: $whiteColor;
+$dropDownactiveBgColor: $lightGray;
+$dropDownactiveBgRadius: 0px;
+
+//Burger Menu Variables
+$mobilebg: #000;
+$navbarTopPaddingBurgerMenu: 35px;
+$dismissWidth: 74px;
+$dismissHeight: 74px;
+$dismissLineHeight: 70px;
+$dismissBg: transparent;
+$dismisColor: #000;
+
+@mixin dropDownStyle() {
+  background: $dropDownUlBg;
+  padding: 0;
+  margin: 0;
+  min-width: 220px;
+  border: $dropDownBorder;
+  border-radius: $dropDownBorderRadius;
+  transform: inherit !important;
+  top: 100% !important;
+  li {
+    margin-left: 0;
+    a {
+      color: $dropDownnavlinkColor;
+      padding: $dropDownPadding;
+      font-size: $dropDownnavlinkFontSize;
+      text-transform: capitalize;
+    }
+    &.active,
+    &:hover {
+      background: $dropDownactiveBgColor;
+      border-radius: $dropDownactiveBgRadius;
+      > a {
+        color: $dropDownnavlinkActiveColor !important;
+      }
+    }
+
+    //For Showing 2 Step Dropdown Menu on Right Side
+    &.submenu {
+      .dropdown-toggle {
+        transform: rotate(-90deg);
+      }
+      .subdropdown {
+        left: 100%;
+        top: 0 !important;
+      }
+      @include tab {
+        .dropdown-toggle {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+  @include tab {
+    background: $dropDownUlBgPhone;
+    li {
+      text-align: center;
+      a {
+        color: $dropDownnavlinkColorPhone;
+        text-align: center;
+        padding: $dropDownPaddingPhone;
+      }
+    }
+
+    //For Showing 2 Step Dropdown Menu on Right Side to Bottom in Burger Menu
+    .subdropdown {
+      left: 0 !important;
+    }
+  }
+}
+
+@mixin fullwidth {
+  @include dispflex(flex, space-between, center);
+  .menubox {
+    flex: 0 0 33.33%;
+    display: flex;
+    flex-direction: row;
+    .headerbox {
+      ul {
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        li {
+          padding-left: 100px;
+          a {
+            font-size: 20px;
+            color: rgba($whiteColor, 1);
+            span {
+              color: $yellow;
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+      @include desktopX {
+        ul {
+          li {
+            padding-left: 70px;
+          }
+        }
+      }
+      @include desktop {
+        margin-top: 4px;
+        ul {
+          li {
+            padding-left: 70px;
+            a {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menulogo {
+    flex: 0 0 33.33%;
+    text-align: center;
+  }
+  .menubtn {
+    flex: 0 0 33.33%;
+    text-align: right;
+  }
+  position: relative;
+  .logo a {
+    display: block;
+  }
+  .navbarLink {
+    background: $yellow;
+    background-size: cover;
+    width: 40%;
+    position: fixed;
+    top: 0%;
+    left: -100%;
+    padding: 0px 40px 0px 80px;
+    height: 100vh;
+    z-index: 2;
+    transition: all 0.7s;
+    text-align: center;
+    .navbar-collapse {
+      position: absolute;
+      top: 20%;
+      max-width: 1110px;
+      margin: 0px auto 0px;
+      overflow: hidden;
+      align-items: center;
+      width: 100%;
+    }
+    .navbar-nav {
+      flex-direction: column;
+    }
+    #dismiss {
+      display: block !important;
+    }
+    ul {
+      margin-top: 80px;
+      margin-bottom: 80px;
+      li {
+        position: relative;
+        text-transform: $headerTextTransform;
+        margin-left: 0px;
+        width: 450px;
+        margin-bottom: 10px;
+        z-index: 0;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          height: 100%;
+          width: 0%;
+          background: rgba($whiteColor, 1);
+          transition: 0.5s ease-in-out;
+          z-index: -1;
+        }
+        .dropdown-toggle {
+          padding: 3px;
+          &::after {
+            display: none;
+          }
+        }
+        a {
+          text-align: left;
+          position: relative;
+          font-weight: 600;
+          line-height: 48px;
+          padding: 12px 45px;
+          padding-left: 100px;
+          color: #000;
+          text-transform: capitalize;
+          font-size: 35px;
+          display: block;
+          font-family: $regularfont;
+          overflow: hidden;
+          span {
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            img {
+              width: 37px;
+              object-fit: contain;
+            }
+          }
+          //    &::after{content:attr(data-text); font-size:35px; position: absolute; opacity:1; transition:0.4s ease-in; white-space: nowrap;
+          //     top:0%; left: 0; height:100%; width:0%; margin: auto; z-index:1; overflow: hidden; color:$blackColor;}
+          @include desktopM {
+            font-size: 33px;
+            padding: 12px 40px;
+            padding-left: 80px;
+            span {
+              img {
+                width: 32px;
+              }
+            }
+          }
+          @include desktop {
+            font-size: 25px;
+            line-height: 30px;
+            padding: 12px 30px;
+            padding-left: 70px;
+            span {
+              top: 12px;
+              img {
+                width: 25px;
+              }
+            }
+          }
+          @include mini-desktop {
+            &::after {
+              font-size: 30px;
+            }
+          }
+          @include tab {
+            color: $navlinkColorPhone;
+          }
+          @include phone {
+            font-size: 22px;
+            line-height: 30px;
+            &::after {
+              font-size: 22px;
+            }
+          }
+        }
+        .imgmenu {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(380px, 0px);
+          overflow: hidden;
+          img {
+            height: 250px;
+            width: 400px;
+            opacity: 0;
+            position: relative;
+            left: -100%;
+          }
+        }
+        //Main Header Navigation Hover Effect
+        &.active {
+          &::after {
+            width: 100%;
+          }
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+          a {
+            &::after {
+              animation: 1s menu_text steps(16) forwards;
+            }
+          }
+          .imgmenu {
+            img {
+              width: 100%;
+              opacity: 1;
+              left: 0%;
+              transition: 0.5s ease-in-out;
+            }
+          }
+        }
+
+        //DropDown menu Styling
+        > .dropdown-menu {
+          @include dropDownStyle();
+        }
+
+        //For Showing Dropdown on Hover css in Desktop
+        &:hover,
+        &:focus {
+          > .dropdown-menu {
+            li {
+              flex-direction: column;
+            }
+            @include tab_min {
+              display: block;
+              opacity: 1;
+              visibility: visible;
+              z-index: 10;
+              transition: all 0.25s ease-out;
+              li {
+                flex-direction: column;
+              }
+            }
+          }
+        }
+
+        //For Showing Sub Dropdown in Bottom
+        &.openBottom {
+          li.submenu .dropdown-toggle {
+            transform: rotate(0deg);
+          }
+          .subdropdown {
+            left: 0 !important;
+            top: 100% !important;
+            position: relative;
+            li {
+              padding-left: 20px;
+              a {
+                font-size: 13px;
+                padding: 0;
+              }
+              &:hover {
+                background: none;
+                a {
+                  color: $lightGray !important;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include tab {
+        flex-direction: column;
+        margin: 0 auto;
+        li > .dropdown-menu {
+          position: relative !important;
+          transform: none !important;
+        }
+        li {
+          width: 350px;
+          .imgmenu {
+            transform: translate(210px, 0px);
+            img {
+              height: 150px;
+              object-fit: contain;
+              width: auto;
+            }
+          }
+        }
+      }
+      @include phone {
+        li {
+          width: 250px;
+          margin-bottom: 10px;
+          .imgmenu {
+            transform: translate(210px, 0px);
+            img {
+              height: 150px;
+              object-fit: contain;
+              width: auto;
+            }
+          }
+        }
+      }
+      @include phone-xs {
+        li {
+          .imgmenu {
+            transform: translate(160px, 0px);
+          }
+        }
+      }
+    }
+    //Burger Menu CSS
+    &.active {
+      top: 0%;
+      left: 0%;
+      overflow: hidden;
+    }
+    @include tab {
+      .navbar-collapse {
+        max-width: 100%;
+      }
+    }
+
+    //Close Button in Burger Menu
+    #dismiss {
+      width: $dismissWidth;
+      height: $dismissHeight;
+      line-height: $dismissLineHeight;
+      background: $dismissBg;
+      color: $dismisColor;
+      text-align: center;
+      font-size: 25px;
+      position: absolute;
+      top: 40px;
+      right: 30px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 9999;
+      &:hover {
+        border: 1px solid #000;
+      }
+      @include tab {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        img {
+          height: 20px;
+        }
+      }
+    }
+    @include desktop {
+      ul {
+        margin-top: 20px;
+      }
+      #dismiss {
+        width: 50px;
+        height: 50px;
+        line-height: 0px;
+        img {
+          height: 50px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+header {
+  padding: 50px 0px 0px;
+  position: absolute !important;
+  top: 0px;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  max-width: 85.5vw;
+  .logo {
+    a {
+      display: inline-block !important;
+    }
+  }
+  .navBlock {
+    .menubtnbox {
+      height: 30px;
+      display: inline-block;
+      width: 30px;
+      padding: 3px 0px 3px 12px;
+      cursor: pointer;
+      .crossLine {
+        background: $yellow;
+        position: relative;
+        display: inline-block;
+        padding: 0px;
+        height: 7px;
+        width: 7px;
+        border: 0px solid;
+        cursor: pointer;
+        border-radius: 0px;
+        .line {
+          display: block;
+          background: $yellow;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          &.crossLine1 {
+            top: 100%;
+            right: 100%;
+            margin-top: 3px;
+            margin-right: 3px;
+          }
+          &.crossLine2 {
+            top: 100%;
+            left: 100%;
+            margin-top: 3px;
+            margin-left: 3px;
+          }
+          &.crossLine3 {
+            bottom: 100%;
+            right: 100%;
+            margin-bottom: 3px;
+            margin-right: 3px;
+          }
+          &.crossLine4 {
+            bottom: 100%;
+            left: 100%;
+            margin-bottom: 3px;
+            margin-left: 3px;
+          }
+          &.crossLine5 {
+            top: 100%;
+            left: 0%;
+            margin-top: 3px;
+          }
+          &.crossLine6 {
+            bottom: 100%;
+            right: 0%;
+            margin-bottom: 3px;
+            transition: 0.5s ease-in-out;
+          }
+          &.crossLine7 {
+            bottom: 0%;
+            left: 100%;
+            margin-left: 3px;
+          }
+          &.crossLine8 {
+            bottom: 0%;
+            right: 100%;
+            margin-right: 3px;
+          }
+        }
+      }
+      &:hover {
+        .crossLine {
+          .crossLine6 {
+            bottom: 350%;
+          }
+          // .crossLine6{animation: animationiconbox 2s cubic-bezier(1, 0.99, 0.03, 0.01) infinite; }
+        }
+      }
+      // #sidebarCollapse { z-index: 1;}
+      #sidebarCollapse i {
+        display: none;
+      }
+    }
+  }
+
+  .navbarLink {
+    .navbar-nav {
+      li {
+        transition: 1.5s ease-in-out;
+        opacity: 0;
+        top: 50%;
+        &:first-child {
+          transition-delay: 0s;
+        }
+      }
+    }
+    &.active .navbar-nav {
+      $n: 8;
+      @for $i from 1 through $n {
+        li:nth-child(#{$i}) {
+          transition-delay: 0.2s * $i;
+          opacity: 1;
+          top: 0%;
+        }
+      }
+    }
+  }
+  @include desktoHD {
+    max-width: 1640px;
+  }
+  @include desktop {
+    padding: 20px 0px 0px;
+    .navBlock .menubtnbox .crossLine {
+      height: 5px;
+      width: 5px;
+      .line {
+        &.crossLine1 {
+          margin-top: 2px;
+          margin-right: 2px;
+        }
+        &.crossLine2 {
+          margin-top: 2px;
+          margin-left: 2px;
+        }
+        &.crossLine3 {
+          margin-bottom: 2px;
+          margin-right: 2px;
+        }
+        &.crossLine4 {
+          margin-bottom: 2px;
+          margin-left: 2px;
+        }
+        &.crossLine5 {
+          margin-top: 2px;
+        }
+        &.crossLine6 {
+          margin-bottom: 2px;
+        }
+        &.crossLine7 {
+          margin-left: 2px;
+        }
+        &.crossLine8 {
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+  @include mini-desktop {
+    .navbarLink {
+      .navbar-nav {
+        padding: 0px 50px;
+      }
+    }
+  }
+  @include tab {
+    .navbarLink {
+      .navbar-nav {
+        padding: 0px 0px;
+      }
+    }
+  }
+}
+@keyframes menu_texttwo {
+  0% {
+    width: 450px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+@keyframes menu_text {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 450px;
+  }
+}
+
+@keyframes animationiconbox {
+  0% {
+    bottom: 300%;
+  }
+  100% {
+    bottom: 200%;
+  }
+}
+@keyframes animationicon {
+  0% {
+    transform: rotate(90deg);
+  }
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// .navbarLink {
+//     .navbar-nav{
+//       li{transition:0.5s ease-in-out; opacity:0; transform: translateY(-100px);}
+//     }
+//     &.active .navbar-nav{
+//         $n: 8;
+//          @for $i from 1 through $n {
+//             li:nth-child(#{$i}){transition-delay:0.4s * $i; opacity:1; animation: menuanimation 1s forwards;}
+//          }
+//   }
+// }
+// @keyframes menuanimation{
+//     0%{transform:translateY(0px);}
+//     80%{transform:translateY(20px);}
+//     100%{transform:translateY(0px);}
+//  }
+
+//Navbar
+.mainHeader header .navbarLink {
+  overflow-y: scroll;
+  width: 40vw;
+}
+
+.InvestorBlock {
+  padding: 15.5% 21% 0px;
+  height: 100%;
+  .arrowLink {
+    position: absolute;
+    top: 55px;
+    cursor: pointer;
+    left: 80px;
+  }
+  .boxInvestorBlock {
+    margin-bottom: 50px;
+    .trendingCircle {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  .trendingCircle {
+    margin-bottom: 25px;
+  }
+  .investorTagLine {
+    width: 100%;
+    font-size: 53px;
+    color: $blackColor;
+    line-height: 73px;
+    span {
+      color: $bodycolor;
+      display: block;
+    }
+  }
+  .emailBlock {
+    position: relative;
+    i {
+      color: #b6b6b6;
+      position: absolute;
+      left: 0;
+      top: 18px;
+    }
+    .form-control {
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      border-radius: 0px;
+      font-size: 20px;
+      padding-left: 35px !important;
+      border-bottom: 1px solid rgba(#b6b6b6, 1);
+      padding: 10px 20px 10px;
+      color: rgba(#b6b6b6, 1);
+      width: 500px;
+    }
+    ::-webkit-input-placeholder {
+      color: #b6b6b6 !important;
+      font-size: 20px;
+    }
+    :-ms-input-placeholder {
+      color: #b6b6b6 !important;
+      font-size: 20px;
+    }
+    ::placeholder {
+      color: #b6b6b6 !important;
+      font-size: 20px;
+    }
+  }
+  .btnaccess {
+    float: none;
+    margin-top: 50px;
+  }
+  @include desktop {
+    .investorTagLine {
+      font-size: 40px;
+      line-height: 53px;
+    }
+    .boxInvestorBlock .trendingCircle img {
+      height: 40px;
+    }
+  }
+  @include mini-desktopxd {
+    .emailBlock .form-control {
+      width: 420px;
+    }
+  }
+  @include tab {
+    .emailBlock {
+      i {
+        top: 18px;
+      }
+      .form-control {
+        width: 280px;
+        font-size: 14px;
+        &::-webkit-input-placeholder {
+          font-size: 14px;
+        }
+        &:-ms-input-placeholder {
+          font-size: 14px;
+        }
+        &::placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+    .boxInvestorBlock {
+      margin-bottom: 20px;
+    }
+    .investorTagLine {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+  @include phone-xs {
+    padding: 30px;
+    .arrowLink {
+      left: 25px;
+      img {
+        width: 25px;
+      }
+    }
+    .btnaccess {
+      margin-top: 30px;
+    }
+    .mainHeader .InvestorBlock .boxInvestorBlock {
+      margin-bottom: 0px;
+    }
+    .investorTagLine {
+      font-size: 25px;
+      line-height: 35px;
+    }
+    .emailBlock .form-control {
+      width: 250px;
+    }
+  }
+  @include phone-5s {
+    .InvestorBlock {
+      padding: 150px 25px 60px 25px;
+    }
+  }
+}
+.mainHeader {
+  position: relative;
+  z-index: 999;
+  .menulogo {
+    svg {
+      fill: #fff;
+    }
+  }
+  header {
+    @include fullwidth;
+    width: 100%;
+  }
+  .btnMenuInquiry {
+    float: right;
+    padding: 40px 20px 0px;
+    .btnmain {
+      padding: 23px 80px 23px 27px;
+      color: $bodycolor;
+      border: 2px solid $bodycolor;
+      .btnimage1 {
+        margin-right: 13px;
+        path {
+          fill: $bodycolor;
+        }
+      }
+      .btnimage {
+        width: 53px;
+        background: $yellow;
+        svg path {
+          fill: $bodycolor;
+        }
+      }
+      &::before {
+        width: 53px;
+        background: rgba($bodycolor, 0.25);
+      }
+      &:hover {
+        color: rgba($yellow, 1);
+        background: rgba($blue, 1);
+        .btnimage1 path {
+          fill: $yellow;
+        }
+        &:before {
+          width: 100%;
+          background: rgba($bodycolor, 1);
+        }
+        .btnimage {
+          background: rgba($bodycolor, 0.25);
+          svg path {
+            fill: $yellow;
+          }
+        }
+      }
+    }
+    .investor {
+      padding-left: 15px;
+    }
+    .imgTreding {
+      position: relative;
+    }
+  }
+  @include desktopM {
+    .btnMenuInquiry .btnmain {
+      padding: 20px 70px 20px 30px !important;
+    }
+  }
+  @include desktop {
+    header {
+      .btnMenuInquiry .btnmain {
+        padding: 15px 60px 15px 18px !important;
+        .btnimage,
+        &::before {
+          width: 45px;
+        }
+      }
+    }
+    .menulogo {
+      a {
+        svg,
+        img {
+          height: 44px;
+        }
+      }
+    }
+  }
+  @include mini-desktop {
+    header .navbarLink {
+      padding: 0px 20px 0px 20px;
+      .navbar-nav {
+        padding: 0px 0px;
+      }
+      ul li {
+        width: 300px;
+        a {
+          font-size: 26px;
+          padding: 15px 15px;
+          padding-left: 70px;
+        }
+      }
+    }
+    header .menubox .headerbox ul li {
+      padding-left: 40px;
+    }
+  }
+  @include tab {
+    .btnMenuInquiry .btnmain {
+      padding: 14px 50px 14px 20px !important;
+      &::before {
+        width: 40px;
+      }
+
+      .btnimage {
+        width: 40px;
+        .btnimage1,
+        svg {
+          height: 11px;
+        }
+      }
+    }
+    .InvestorBlock {
+      height: 100%;
+      overflow: scroll;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .arrowLink {
+        top: 50px;
+        left: 60px;
+        img {
+          height: 25px;
+        }
+      }
+      .trendingCircle img {
+        height: 40px;
+      }
+    }
+    header .navbarLink {
+      width: 50%;
+      overflow: hidden;
+      .navbar-collapse {
+        align-items: inherit;
+      }
+    }
+    header {
+      .menubox .headerbox {
+        display: none;
+      }
+    }
+  }
+  @include mini_tab {
+    header {
+      max-width: 95vw;
+    }
+  }
+  @include phone {
+    .InvestorBlock {
+      padding: 60px 60px 60px 60px;
+    }
+    header .navbarLink {
+      width: 100%;
+      .navbar-nav {
+        margin-left: 13%;
+      }
+    }
+  }
+  @include phone-xs {
+    header {
+      padding: 20px 0px;
+    }
+    .menulogo {
+      a {
+        svg,
+        img {
+          height: 40px;
+        }
+      }
+    }
+    .content_number {
+      display: none;
+    }
+    .navBlock {
+      flex: 0 0 5%;
+    }
+  }
+  @include phone-5s {
+    header .navbarLink ul li {
+      width: 90%;
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.innner_header {
+  .mainHeader .menulogo svg {
+    fill: $blackColor;
+  }
+  .mainHeader header .menubtn .yellowbtn {
+    background: rgba($blue, 1);
+    color: rgba($whiteColor, 1);
+    border-color: rgba($blue, 1);
+    &::after {
+      border-color: rgba($blue, 1);
+    }
+  }
+  header {
+    .navBlock .menubtnbox .crossLine {
+      background: $blackColor;
+      .line {
+        background: $blackColor;
+      }
+    }
+    .menubox .headerbox ul li a {
+      color: $blackColor;
+      span {
+        color: $blackColor;
+      }
+    }
+    .menulogo {
+      a {
+        display: inline-block;
+        img {
+          fill: $blackColor;
+        }
+      }
+    }
+  }
+}
