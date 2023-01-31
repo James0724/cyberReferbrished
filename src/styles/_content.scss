@@ -50,16 +50,18 @@
   .innerbox {
     padding: 20px 0px 40px;
   }
-  .illustration {
-    img {
-      position: relative;
-    }
-  }
   .box1 {
     .regularfont {
       line-height: 22px;
       padding-right: 0px;
       font-size: 14px;
+    }
+  }
+}
+@include phone-xs {
+  .illustration {
+    img {
+      position: relative;
     }
   }
 }
