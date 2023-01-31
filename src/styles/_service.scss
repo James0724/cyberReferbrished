@@ -1,5 +1,5 @@
 .category {
-  padding: 200px 0px 20px;
+  padding: 80px 0px 20px;
   .servicearea {
     padding: 0;
     .servicebox {
@@ -31,7 +31,7 @@
         .category-text {
           padding: 0;
           h4 {
-            @include fontSize(25px);
+            @include fontSize(24px);
             margin-bottom: 20px;
             color: $whiteColor;
             font-family: $regularfont;
@@ -47,8 +47,49 @@
               z-index: 1;
               min-height: 50px;
               padding: 0px 30px;
+              white-space: nowrap;
               &:hover {
                 color: rgba($whiteColor, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tab {
+  .category {
+    padding: 50px 0px 50px;
+    .servicearea {
+      .servicebox {
+        .servicecnt-box {
+          .category-text {
+            ul {
+              li {
+                @include fontSize(16px);
+                white-space: pre-wrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include phone {
+  .category {
+    padding: 40px 0px 40px;
+    .servicearea {
+      .servicebox {
+        .servicecnt-box {
+          .category-text {
+            ul {
+              li {
+                @include fontSize(16px);
+                color: $whiteColor;
               }
             }
           }

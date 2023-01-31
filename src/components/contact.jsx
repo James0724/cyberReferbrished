@@ -42,7 +42,7 @@ function Contact() {
             </div>
             <div className="Getintouchbox">
               <div className="Getbtn">
-                <a href id="gettouch">
+                <a href="mailto:jameskahoro07@gmail.com" id="gettouch">
                   Get in touch
                 </a>
               </div>

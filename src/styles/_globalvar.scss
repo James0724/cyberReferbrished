@@ -226,16 +226,16 @@ h2 {
     @include fontSize(35px);
   }
   @include phone {
-    @include fontSize(32px);
+    @include fontSize(30px);
     font-weight: 600;
   }
   @include phone-x {
-    @include fontSize(30px);
+    @include fontSize(28px);
     font-weight: 600;
     margin-bottom: 15px;
   }
   @include phone_5 {
-    @include fontSize(24px);
+    @include fontSize(23px);
     font-weight: 600;
   }
 }
@@ -256,6 +256,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   color: $whiteColor;
+
   .font25 {
     max-width: 310px;
   }

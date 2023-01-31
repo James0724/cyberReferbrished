@@ -371,7 +371,6 @@
     }
   }
   @include desktopX {
-    padding-top: 110px;
     h3 {
       margin-bottom: 20px;
       @include fontSize(50px);
@@ -439,7 +438,6 @@
     }
   }
   @include desktop {
-    padding-top: 100px;
     .footerenquiryarea {
       .font_35 {
         @include fontSize(24px);
@@ -624,8 +622,6 @@
     }
   }
   @include mini_tab {
-    padding-top: 50px;
-    min-height: 650px;
     // .playstopbtnbox .playstopbtn {
     //   height: 120px;
     //   width: 120px;
@@ -676,7 +672,6 @@
     // }
   }
   @include phone-x {
-    min-height: 900px;
     .Getintoucharea .Getintouchdetail .giveusarea {
       ul {
         flex-direction: column;

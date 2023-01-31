@@ -1,10 +1,14 @@
 .innerbox {
-  padding: 50px 0px 80px;
+  padding: 30px 0px 40px;
 }
 .illustration {
   position: relative;
   width: 100%;
   bottom: 20px;
+  img {
+    position: absolute;
+    bottom: 0;
+  }
 }
 .box1 {
   .regularfont {
@@ -43,6 +47,9 @@
   }
 }
 @include phone {
+  .innerbox {
+    padding: 20px 0px 40px;
+  }
   .box1 {
     .regularfont {
       line-height: 22px;

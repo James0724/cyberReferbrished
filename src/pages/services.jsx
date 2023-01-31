@@ -9,27 +9,33 @@ function Services() {
   return (
     <section id="services" className="outerbox">
       <div class="innerbox">
-        <Title tlt="Our services" smlt="what we offer" />
-        <div class="service_wrapper row">
-          <div class="col-sm box-image">
-            <div class="timelinebox">
-              <img className="img-fluid" src={ServiceBg} alt="cyber in kenya" />
+        <FadeInWhenVisible>
+          <Title tlt="Our services" smlt="what we offer" />
+          <div class="service_wrapper row">
+            <div class="col-sm box-image">
+              <div class="timelinebox">
+                <img
+                  className="img-fluid"
+                  src={ServiceBg}
+                  alt="cyber in kenya"
+                />
+              </div>
+            </div>
+            <div class="col-sm box1">
+              <div class="timelineboxtop">
+                <h3 className="smalltitle subtitle">our survices incudes</h3>
+              </div>
+              <p class="regularfont">
+                We offer the following services Itax registration services, KRA
+                pin certificate services, Typesetting Printing, Computer
+                Accessories and Services, Office Stationery, Printing,
+                Photocopy, passport application, job application Gift Items,
+                Internet Services, Branding, Graphic Design, web Development,
+                computer classes, online writing and e-citizen services.
+              </p>
             </div>
           </div>
-          <div class="col-sm box1">
-            <div class="timelineboxtop">
-              <h3 className="smalltitle subtitle">our survices incudes</h3>
-            </div>
-            <p class="regularfont">
-              We offer the following services Itax registration services, KRA
-              pin certificate services, Typesetting Printing, Computer
-              Accessories and Services, Office Stationery, Printing, Photocopy,
-              passport application, job application Gift Items, Internet
-              Services, Branding, Graphic Design, web Development, computer
-              classes, online writing and e-citizen services.
-            </p>
-          </div>
-        </div>
+        </FadeInWhenVisible>
         <FadeInWhenVisible>
           <div className="category">
             <h2 className="typtitle">our services categorization</h2>

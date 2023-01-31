@@ -61,7 +61,7 @@ body {
 
   &::-webkit-scrollbar {
     background-color: transparent;
-    width: 10px;
+    width: 7px;
   }
 
   &::-webkit-scrollbar-track {
@@ -71,9 +71,12 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: $yellow;
     border-radius: 20px;
-    border: 4px solid $yellow;
+    border: 2px solid $yellow;
     background-clip: content-box;
   }
+}
+.cyber_app {
+  overflow-x: hidden !important;
 }
 
 //Homepage
