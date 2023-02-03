@@ -3,7 +3,7 @@ import ServiceBg from "../assets/servicebg.jpg";
 import Des from "../assets/Design-community-bro.svg";
 import Onl from "../assets/analysis-bro.svg";
 import Cyb from "../assets/Telework-bro.svg";
-import Poet from "../assets/Potry-bro.svg";
+import Poet from "../assets/Poetry-bro.svg";
 import FadeInWhenVisible from "../components/fadeinanim";
 
 function Services() {
