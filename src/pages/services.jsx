@@ -3,6 +3,7 @@ import ServiceBg from "../assets/servicebg.jpg";
 import Des from "../assets/Design-community-bro.svg";
 import Onl from "../assets/analysis-bro.svg";
 import Cyb from "../assets/Telework-bro.svg";
+import Poet from "../assets/Potry-bro.svg";
 import FadeInWhenVisible from "../components/fadeinanim";
 
 function Services() {
@@ -103,6 +104,29 @@ function Services() {
                       <li>Logo Design</li>
                       <li>Wedding Cards and business cards</li>
                       <li>Graphics design</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="servicebox col-md-6 ">
+                <div className="servicecnt-box d-flex flex-column align-items-center">
+                  <div class="category-svg">
+                    <img
+                      className="img-fluid"
+                      src={Poet}
+                      alt="cyber online services in Kenya"
+                    />
+                  </div>
+
+                  <div class="category-text">
+                    <h4>Online writing</h4>
+                    <ul>
+                      <li>Content creation</li>
+                      <li>Editing Services</li>
+                      <li>Content managment</li>
+                      <li>Ghost writing</li>
+                      <li>Research writing</li>
+                      <li>Blog writing</li>
                     </ul>
                   </div>
                 </div>
